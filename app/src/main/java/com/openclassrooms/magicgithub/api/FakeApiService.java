@@ -19,7 +19,7 @@ public class FakeApiService implements ApiService {
     @Override
     public List<User> getUsers() {
         return users;
-    }
+    } // it needs to return the List, so I changed the return type and added a return.
 
     /**
      * Generate a random {@link User} and add it {@link FakeApiService#users} list.
@@ -27,9 +27,9 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void generateRandomUser() {
-        List<User> tempRandomUsers = generateUsersRandom();
+        List<User> tempRandomUsers = generateUsersRandom();//creates a new temp List and retrieves the List from FakeApiServiceGenerator
         Random rand = new Random(); //creates a random object;
-        users.add(tempRandomUsers.get(rand.nextInt(tempRandomUsers.size())));
+        users.add(tempRandomUsers.get(rand.nextInt(tempRandomUsers.size())));//add a random user to the Users list
     }
 
     /**
@@ -37,6 +37,7 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void deleteUser(User user) {
-        // TODO: A modifier
+        int index = users.indexOf(user); //finds the index of the user to be deleted
+        users.remove(index);//deletes the desired user
     }
 }

@@ -14,7 +14,7 @@ public class UserRepository {
     }
 
     public List<User> getUsers() {
-        return apiService.getUsers();
+        return apiService.getUsers(); //Needed to call the function from FakeApiService and return it
     }
 
     public void generateRandomUser() {
@@ -22,6 +22,6 @@ public class UserRepository {
     }
 
     public void deleteUser(User user) {
-        // TODO: A modifier
+        apiService.deleteUser(user);
     }
 }
