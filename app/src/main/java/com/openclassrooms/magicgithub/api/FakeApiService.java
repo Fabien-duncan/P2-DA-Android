@@ -6,7 +6,7 @@ import java.util.Random;
 
 import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.FAKE_USERS_RANDOM;
 import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.generateUsers;
-import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.generateUsersRandom;
+//import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.generateUsersRandom;
 
 public class FakeApiService implements ApiService {
 
@@ -27,9 +27,10 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void generateRandomUser() {
-        List<User> tempRandomUsers = generateUsersRandom();//creates a new temp List and retrieves the List from FakeApiServiceGenerator
-        Random rand = new Random(); //creates a random object;
-        users.add(tempRandomUsers.get(rand.nextInt(tempRandomUsers.size())));//add a random user to the Users list
+        //List<User> tempRandomUsers = generateUsersRandom();//creates a new temp List and retrieves the List from FakeApiServiceGenerator
+        //Random rand = new Random(); //creates a random object;
+        //users.add(tempRandomUsers.get(rand.nextInt(tempRandomUsers.size())));//add a random user to the Users list
+        users.add(User.random());
     }
 
     /**
@@ -37,7 +38,7 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void deleteUser(User user) {
-        int index = users.indexOf(user); //finds the index of the user to be deleted
-        users.remove(index);//deletes the desired user
+        //int index = users.indexOf(user); //finds the index of the user to be deleted
+        users.remove(user);//deletes the desired user
     }
 }
