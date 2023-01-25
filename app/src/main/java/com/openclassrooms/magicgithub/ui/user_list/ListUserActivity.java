@@ -44,10 +44,10 @@ public class ListUserActivity extends BaseActivity implements UserListAdapter.Li
         recyclerView.setAdapter(adapter);
     }
 
-    private void configureFab() {
+    private void configureFab() {//configure add button
         fab = findViewById(R.id.activity_list_user_fab);
         fab.setOnClickListener(view -> {
-            getUserRepository().generateRandomUser();
+            getUserRepository().generateRandomUser();//Uses the function inherited from BaseActivity
             loadData();
         });
     }

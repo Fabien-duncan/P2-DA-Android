@@ -30,7 +30,7 @@ public class UserListAdapter extends RecyclerView.Adapter<ListUserViewHolder> {
 
     @NonNull
     @Override
-    public ListUserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ListUserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {//gives a look to each row
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.item_list_user, parent,false);
@@ -38,12 +38,12 @@ public class UserListAdapter extends RecyclerView.Adapter<ListUserViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListUserViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ListUserViewHolder holder, int position) {//Assigns value to each Item list depending on screen 'position'
         holder.bind(users.get(position), callback);
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount() {//Number of items you want to display, helps with the onBind process
         return users.size();
     }
 
