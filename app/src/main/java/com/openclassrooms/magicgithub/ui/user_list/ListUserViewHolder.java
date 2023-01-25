@@ -33,6 +33,6 @@ public class ListUserViewHolder extends RecyclerView.ViewHolder {
                 .apply(RequestOptions.circleCropTransform())
                 .into(avatar);
         username.setText(user.getLogin());
-        deleteButton.setOnClickListener(view -> callback.onClickDelete(user));
+        deleteButton.setOnClickListener(view -> callback.onClickDelete(user));//assigns an onclickListener to a delete button linked to a user (one list element).
     }
 }
